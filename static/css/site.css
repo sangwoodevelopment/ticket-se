@@ -4280,3 +4280,179 @@ body{
   font-family: "Noto Serif KR", "함초롱바탕", serif;
   letter-spacing: -0.02em;
 }
+
+/* ===== footer layout reset ===== */
+.ts-footer-main{
+  background: linear-gradient(90deg, #0f1f3d 0%, #0a1730 100%);
+  padding: 32px 0 28px;
+}
+
+.ts-footer-main-inner{
+  display: grid;
+  grid-template-columns: 280px minmax(420px, 1fr) 320px;
+  gap: 56px;
+  align-items: start;
+}
+
+.ts-footer-col{
+  min-width: 0;
+}
+
+.ts-footer-col h3{
+  margin: 0 0 16px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.3;
+  word-break: keep-all;
+}
+
+.ts-footer-col p,
+.ts-footer-col .meta{
+  margin: 0;
+  color: rgba(255,255,255,.82);
+  font-size: 15px;
+  line-height: 1.9;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.ts-footer-col.customer .phone{
+  margin: 8px 0 16px;
+  color: #2f80ff;
+  font-size: 54px;
+  font-weight: 900;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+}
+
+.ts-footer-col.company p{
+  margin-bottom: 14px;
+}
+
+.ts-footer-col.company .meta{
+  margin-top: 10px;
+}
+
+.ts-footer-links{
+  background: #34425f;
+  padding: 14px 0;
+}
+
+.ts-footer-links .container{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.ts-footer-links a,
+.ts-footer-links span{
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  word-break: keep-all;
+}
+
+.ts-footer-bottom{
+  background: #090d15;
+  padding: 16px 0;
+}
+
+.ts-footer-bottom-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.ts-footer-brand{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.ts-footer-brand-icon{
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #0c3d91;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.ts-footer-brand-text strong{
+  display: block;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.ts-footer-brand-text span{
+  display: block;
+  color: #cbd5e1;
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+.ts-footer-copy{
+  color: #cbd5e1;
+  font-size: 14px;
+  text-align: right;
+}
+
+/* 고객센터 문단 줄 간격 */
+.ts-footer-col.customer p{
+  line-height: 1.75;
+}
+
+/* ===== mobile ===== */
+@media (max-width: 1024px){
+  .ts-footer-main-inner{
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .ts-footer-col.customer .phone{
+    font-size: 46px;
+  }
+}
+
+@media (max-width: 768px){
+  .ts-footer-main{
+    padding: 24px 0 22px;
+  }
+
+  .ts-footer-links .container{
+    justify-content: flex-start;
+  }
+
+  .ts-footer-col h3{
+    font-size: 17px;
+    margin-bottom: 12px;
+  }
+
+  .ts-footer-col p,
+  .ts-footer-col .meta{
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .ts-footer-col.customer .phone{
+    font-size: 40px;
+  }
+
+  .ts-footer-bottom-inner{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ts-footer-copy{
+    text-align: left;
+  }
+}
