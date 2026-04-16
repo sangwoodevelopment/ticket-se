@@ -4028,3 +4028,64 @@ body{
   font-family: "HCR Batang", "함초롱바탕", "Malgun Gothic", serif !important;
   letter-spacing: -0.02em;
 }
+
+/* 바로가기 영역 모바일 깨짐 방지 */
+.quick-links-grid,
+.ts-quick-grid,
+.shortcut-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.quick-link-item,
+.ts-quick-item,
+.shortcut-item {
+  min-width: 0;
+  text-align: center;
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.quick-link-item .label,
+.ts-quick-item .label,
+.shortcut-item .label {
+  display: block;
+  white-space: nowrap;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  writing-mode: horizontal-tb !important;
+  line-height: 1.25;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* 모바일에서 2줄까지만 허용하고 세로깨짐 방지 */
+@media (max-width: 768px) {
+  .quick-links-grid,
+  .ts-quick-grid,
+  .shortcut-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+
+  .quick-link-item,
+  .ts-quick-item,
+  .shortcut-item {
+    padding: 10px 4px;
+  }
+
+  .quick-link-item .label,
+  .ts-quick-item .label,
+  .shortcut-item .label {
+    white-space: normal;
+    word-break: keep-all;
+    writing-mode: horizontal-tb !important;
+    font-size: 13px;
+    line-height: 1.2;
+  }
+}
