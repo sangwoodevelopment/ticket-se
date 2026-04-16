@@ -4488,3 +4488,74 @@ body{
     font-size: 12px;
   }
 }
+
+.ts-shortcut-header{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  margin-bottom:14px;
+}
+
+.visitor-counter-box{
+  min-width:180px;
+  height:40px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  padding:0 14px;
+  background:#fff;
+  border:1px solid #d9e1ea;
+  color:#64748b;
+  font-size:13px;
+  font-weight:700;
+}
+
+.visitor-label{
+  color:#64748b;
+}
+
+.visitor-value{
+  color:#111827;
+  font-weight:800;
+}
+
+.visitor-divider{
+  color:#cbd5e1;
+  margin:0 2px;
+}
+
+.ts-shortcut-title{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:0;
+}
+
+.ts-shortcut-title .bar{
+  width:4px;
+  height:28px;
+  background:#ef4444;
+  display:inline-block;
+}
+
+.ts-shortcut-title h3{
+  margin:0;
+  font-size:18px;
+  font-weight:800;
+  color:#111827;
+}
+
+@media (max-width: 768px){
+  .ts-shortcut-header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+  }
+
+  .visitor-counter-box{
+    min-width:auto;
+    width:100%;
+    justify-content:flex-start;
+  }
+}

@@ -150,44 +150,45 @@
 
 <footer class="ts-footer">
   <div class="ts-shortcut-section">
-    <div class="container">
+  <div class="container">
+    <div class="ts-shortcut-header">
+      <div class="visitor-counter-box">
+        <span class="visitor-label">Today</span>
+        <span class="visitor-value">{{ today_visitors }}</span>
+        <span class="visitor-divider">|</span>
+        <span class="visitor-label">Total</span>
+        <span class="visitor-value">{{ total_visitors }}</span>
+      </div>
 
       <div class="ts-shortcut-title">
-        <div class="visitor-counter">
-          Today {{ today_visitors }} | Total {{ total_visitors}}
-        </div>
-        
-      <div class="title-wrap">
         <span class="bar"></span>
         <h3>바로가기</h3>
       </div>
     </div>
 
+    <div class="shortcut-grid">
+      <a href="{% url 'buy_board_page' %}" class="shortcut-item">
+        <span class="icon">🛒</span>
+        <span class="label">상품권 구매</span>
+      </a>
 
-      <div class="shortcut-grid">
-        <a href="{% url 'buy_board_page' %}" class="shortcut-item">
-          <span class="icon">🛒</span>
-          <span class="label">상품권 구매</span>
-        </a>
+      <a href="{% url 'sell_board_page' %}" class="shortcut-item">
+        <span class="icon">💰</span>
+        <span class="label">상품권 판매</span>
+      </a>
 
-        <a href="{% url 'sell_board_page' %}" class="shortcut-item">
-          <span class="icon">💰</span>
-          <span class="label">상품권 판매</span>
-        </a>
+      <a href="{% url 'companies_page' %}" class="shortcut-item">
+        <span class="icon">🏢</span>
+        <span class="label">업체 등록</span>
+      </a>
 
-        <a href="{% url 'companies_page' %}" class="shortcut-item">
-          <span class="icon">🏢</span>
-          <span class="label">업체 등록</span>
-        </a>
-
-        <a href="{% url 'customer_page' %}" class="shortcut-item">
-          <span class="icon">📞</span>
-          <span class="label">고객센터</span>
-        </a>
-      </div>
-
+      <a href="{% url 'customer_page' %}" class="shortcut-item">
+        <span class="icon">📞</span>
+        <span class="label">고객센터</span>
+      </a>
     </div>
   </div>
+</div>
 
   <div class="ts-footer-links">
     <div class="container">
