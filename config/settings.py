@@ -66,7 +66,7 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
                 "leads.context_processors.side_company_box",
-                'leads.context_processors.visitor_count',
+                "leads.context_processors.visitor_count",
             ],
         },
     },
