@@ -4017,7 +4017,7 @@ body{
 .premium-info-table,
 .company-name-korean,
 .shopping-name-korean {
-  font-family: "HCR Batang", "함초롱바탕", "Malgun Gothic", serif !important;
+  font-family: "Noto Serif KR", "함초롱바탕", serif;
   letter-spacing: -0.02em;
 }
 
@@ -4279,6 +4279,6 @@ body{
 .company-name-korean,
 .brand-name,
 .ts-company-name{
-  font-family: "HCR Batang", "HCR Batang LVT", "함초롱바탕", serif !important;
+  font-family: "Noto Serif KR", "함초롱바탕", serif;
   letter-spacing: -0.02em;
 }
