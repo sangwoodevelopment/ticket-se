@@ -1,5 +1,6 @@
 from .models import FavoriteCompany, RecentView, VisitorCount
 from django.utils import timezone
+from django.db.models import Sum
 
 
 def side_company_box(request):
@@ -34,7 +35,7 @@ def visitor_count(request):
     today_obj = VisitorCount.objects.filter(date=today).first()
     today_count = today_obj.count if today_obj else 0
 
-    total_count = sum(VisitorCount.objects.values_list('count', flat=True))
+    total_count = VisitorCount.objects.aggregate(total=Sum("count"))["total"] or 0
 
     return{
         'today_visitor':today_count,
