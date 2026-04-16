@@ -124,6 +124,7 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 LOGIN_REDIRECT_URL = "/adm/payments/"
 LOGOUT_REDIRECT_URL = "/admin-login/"
@@ -137,7 +138,7 @@ MEDIA_ROOT = BASE_DIR / "media"
 
 
 ALLOWED_HOSTS = [
-    "127.0.0.1",
+    "43.201.98.241",
     "localhost",
     "xn--hg4bni008a9wd.com",
     "www.xn--hg4bni008a9wd.com",
