@@ -38,6 +38,6 @@ def visitor_count(request):
     total_count = VisitorCount.objects.aggregate(total=Sum("count"))["total"] or 0
 
     return{
-        'today_visitor':today_count,
-        'total_visitor':total_count,
+        'today_visitors':today_count,
+        'total_visitors':total_count,
     }
