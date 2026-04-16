@@ -269,3 +269,10 @@ class Favorite(models.Model):
 
     class Meta:
         unique_together = ("user", "shopping")
+
+class VisitorCount(models.Model):
+    date = models.DateField(unique=True)
+    count = models.IntegerField(default=0)
+
+    def __str__(self):
+        return f"{self.date} - {self.count}"

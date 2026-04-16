@@ -49,6 +49,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+
+    'leads.middlewares.VisitorMiddleware',
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -64,6 +66,7 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
                 "leads.context_processors.side_company_box",
+                'leads.context_processors.visitor_count',
             ],
         },
     },
@@ -135,7 +138,6 @@ MEDIA_ROOT = BASE_DIR / "media"
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
-
 
 ALLOWED_HOSTS = [
     "43.201.98.241",

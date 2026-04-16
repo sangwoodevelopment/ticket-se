@@ -4456,3 +4456,35 @@ body{
     text-align: left;
   }
 }
+
+.ts-shortcut-title{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.ts-shortcut-title .title-wrap{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.visitor-counter{
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px){
+  .ts-shortcut-title{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .visitor-counter{
+    font-size: 12px;
+  }
+}
