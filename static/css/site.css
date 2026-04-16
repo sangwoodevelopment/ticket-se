@@ -4559,3 +4559,238 @@ body{
     justify-content:flex-start;
   }
 }
+
+/* =========================
+   프리미엄 업체 / 업체 목록 모바일 2열
+========================= */
+@media (max-width: 768px){
+  .ts-premium-grid,
+  .ts-company-grid{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .ts-premium-card,
+  .ts-company-card{
+    width: 100%;
+    min-width: 0;
+  }
+
+  .ts-premium-card-top,
+  .ts-company-card-top{
+    min-height: 138px;
+    padding: 14px 10px;
+  }
+
+  .ts-premium-name,
+  .ts-company-name{
+    font-size: 17px;
+    line-height: 1.3;
+    text-align: center;
+    word-break: keep-all;
+  }
+
+  .ts-premium-badge,
+  .ts-company-badge{
+    top: 10px;
+    right: 10px;
+    font-size: 11px;
+    padding: 4px 7px;
+  }
+
+  .ts-premium-card-body,
+  .ts-company-card-body{
+    padding: 12px 10px 14px;
+  }
+
+  .ts-premium-desc,
+  .ts-company-desc{
+    min-height: 38px;
+    font-size: 13px;
+    line-height: 1.45;
+    margin-bottom: 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    word-break: keep-all;
+  }
+
+  .ts-premium-actions,
+  .ts-company-actions{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .ts-premium-btn,
+  .ts-company-btn{
+    width: 100%;
+    min-width: 0;
+    height: 40px;
+    padding: 0 8px;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* =========================
+   시세 섹션 스타일
+========================= */
+.price-section-card,
+.ts-price-card,
+.price-box{
+  background: #fff;
+  border: 1px solid #d9e1ea;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.price-section-head,
+.ts-price-head,
+.price-box-head{
+  background: #24344d;
+  color: #fff;
+  min-height: 58px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.price-section-head .title-wrap,
+.ts-price-head .title-wrap,
+.price-box-head .title-wrap{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.price-section-head .bar,
+.ts-price-head .bar,
+.price-box-head .bar{
+  width: 4px;
+  height: 26px;
+  background: #ef4444;
+  display: inline-block;
+}
+
+.price-section-head h3,
+.ts-price-head h3,
+.price-box-head h3{
+  margin: 0;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.price-section-head .swiper-pagination,
+.ts-price-head .swiper-pagination,
+.price-box-head .swiper-pagination{
+  position: static;
+  width: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.price-section-head .swiper-pagination-bullet,
+.ts-price-head .swiper-pagination-bullet,
+.price-box-head .swiper-pagination-bullet{
+  width: 10px;
+  height: 10px;
+  margin: 0 !important;
+  background: rgba(255,255,255,0.35);
+  opacity: 1;
+}
+
+.price-section-head .swiper-pagination-bullet-active,
+.ts-price-head .swiper-pagination-bullet-active,
+.price-box-head .swiper-pagination-bullet-active{
+  width: 26px;
+  border-radius: 999px;
+  background: #ef4444;
+}
+
+.price-table-wrap,
+.ts-price-table-wrap{
+  padding: 0 0 12px;
+  background: #fff;
+}
+
+.price-table-wrap table,
+.ts-price-table-wrap table{
+  width: 100%;
+  margin: 0;
+}
+
+.price-table-wrap thead th,
+.ts-price-table-wrap thead th{
+  background: #f8fafc;
+  color: #374151;
+  font-weight: 800;
+  border-bottom: 1px solid #d9e1ea;
+}
+
+.price-table-wrap td,
+.ts-price-table-wrap td{
+  vertical-align: middle;
+}
+
+.price-nav,
+.ts-price-nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px 14px;
+}
+
+.price-nav .nav-btn,
+.ts-price-nav .nav-btn{
+  min-width: 88px;
+  height: 34px;
+  border: 1px solid #d9e1ea;
+  background: #f8fafc;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.price-nav .page-num,
+.ts-price-nav .page-num{
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+@media (max-width: 768px){
+  .price-section-head,
+  .ts-price-head,
+  .price-box-head{
+    min-height: 48px;
+    padding: 0 12px;
+  }
+
+  .price-section-head h3,
+  .ts-price-head h3,
+  .price-box-head h3{
+    font-size: 18px;
+  }
+
+  .price-nav,
+  .ts-price-nav{
+    padding: 10px 10px 12px;
+  }
+
+  .price-nav .nav-btn,
+  .ts-price-nav .nav-btn{
+    min-width: 74px;
+    height: 32px;
+    font-size: 13px;
+  }
+}
