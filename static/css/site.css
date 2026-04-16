@@ -4794,3 +4794,163 @@ body{
     font-size: 13px;
   }
 }
+
+/* ===== 실시간 티켓 금액 ===== */
+.price-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.price-box{
+  background:#fff;
+  border:1px solid #d9e1ea;
+  overflow:hidden;
+}
+
+.price-box-head{
+  min-height:58px;
+  background:#24344d;
+  padding:0 16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.price-box-head .title-wrap{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.price-box-head .bar{
+  width:4px;
+  height:26px;
+  background:#ef4444;
+  display:inline-block;
+}
+
+.price-box-head h3{
+  margin:0;
+  color:#fff;
+  font-size:24px;
+  font-weight:800;
+  line-height:1.2;
+}
+
+.price-dots-wrap{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+.price-dots-wrap button{
+  width:10px;
+  height:10px;
+  border:none;
+  border-radius:999px;
+  padding:0;
+  background:rgba(255,255,255,.35);
+}
+
+.price-dots-wrap button.active{
+  width:26px;
+  background:#ef4444;
+}
+
+.price-table-wrap{
+  padding:0;
+}
+
+.price-carousel .carousel-control-prev,
+.price-carousel .carousel-control-next{
+  display:none;
+}
+
+.live-price-table{
+  width:100%;
+  margin:0;
+}
+
+.live-price-table thead th{
+  background:#f8fafc;
+  color:#374151;
+  font-weight:800;
+  border-bottom:1px solid #d9e1ea;
+}
+
+.live-price-table td,
+.live-price-table th{
+  font-size:14px;
+  vertical-align:middle;
+}
+
+.empty-row{
+  text-align:center;
+  color:#6b7280;
+  padding:28px 0 !important;
+}
+
+.price-nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:10px 14px 14px;
+}
+
+.price-nav .nav-btn{
+  min-width:88px;
+  height:34px;
+  border:1px solid #d9e1ea;
+  background:#f8fafc;
+  color:#374151;
+  font-size:14px;
+  font-weight:700;
+}
+
+.price-nav .page-num{
+  color:#6b7280;
+  font-size:14px;
+  font-weight:700;
+}
+
+@media (max-width: 768px){
+  .price-grid{
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+
+  .price-box-head{
+    min-height:48px;
+    padding:0 12px;
+  }
+
+  .price-box-head h3{
+    font-size:18px;
+  }
+
+  .price-dots-wrap button{
+    width:8px;
+    height:8px;
+  }
+
+  .price-dots-wrap button.active{
+    width:20px;
+  }
+
+  .live-price-table td,
+  .live-price-table th{
+    font-size:13px;
+    white-space:nowrap;
+  }
+
+  .price-nav{
+    padding:10px 10px 12px;
+  }
+
+  .price-nav .nav-btn{
+    min-width:74px;
+    height:32px;
+    font-size:13px;
+  }
+}
