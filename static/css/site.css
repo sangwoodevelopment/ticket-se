@@ -4013,8 +4013,6 @@ body{
 .shopping-detail-title,
 .company-detail-section-title,
 .shopping-detail-section-title,
-.company-info-title,
-.premium-info-table,
 .company-name-korean,
 .shopping-name-korean {
   font-family: "Noto Serif KR", "함초롱바탕", serif;
@@ -4025,7 +4023,7 @@ body{
 .ts-premium-name,
 .company-card-name,
 .shopping-card-name {
-  font-family: "HCR Batang", "함초롱바탕", "Malgun Gothic", serif !important;
+  font-family: "Noto Serif KR", "함초롱바탕", serif;
   letter-spacing: -0.02em;
 }
 
