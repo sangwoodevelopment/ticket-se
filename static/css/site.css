@@ -4089,3 +4089,187 @@ body{
     line-height: 1.2;
   }
 }
+
+.ts-shortcut-section{
+  padding: 18px 0 28px;
+  border-top: 1px solid #dfe5ec;
+  background: #f8fafc;
+}
+
+.ts-shortcut-title{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.ts-shortcut-title .bar{
+  width: 4px;
+  height: 28px;
+  background: #ef4444;
+  display: inline-block;
+}
+
+.ts-shortcut-title h3{
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+  color: #111827;
+}
+
+.shortcut-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.shortcut-item{
+  background: #fff;
+  border: 1px solid #d9e1ea;
+  text-decoration: none;
+  color: #111827;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 18px 12px;
+  font-size: 16px;
+  font-weight: 800;
+  min-width: 0;
+}
+
+.shortcut-item .icon{
+  font-size: 22px;
+  line-height: 1;
+  flex: 0 0 auto;
+}
+
+.shortcut-item .label{
+  display: block;
+  white-space: nowrap;
+  word-break: keep-all;
+  line-height: 1.2;
+}
+
+.ts-footer-links{
+  background: #34425f;
+  padding: 14px 0;
+}
+
+.ts-footer-links .container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.ts-footer-links a,
+.ts-footer-links span{
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.ts-footer-main{
+  background: linear-gradient(90deg, #0f1f3d 0%, #0a1730 100%);
+  padding: 36px 0;
+}
+
+.ts-footer-main-inner{
+  display: grid;
+  grid-template-columns: 1fr 1.6fr 1fr;
+  gap: 40px;
+}
+
+.ts-footer-col h3{
+  color: #fff;
+  margin-bottom: 18px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.ts-footer-col p,
+.ts-footer-col .meta{
+  color: rgba(255,255,255,.78);
+  line-height: 1.9;
+  word-break: keep-all;
+}
+
+.ts-footer-col .phone{
+  font-size: 54px;
+  font-weight: 900;
+  color: #2f80ff;
+  line-height: 1.05;
+  margin-bottom: 16px;
+}
+
+.ts-footer-bottom{
+  background: #0a0f18;
+  padding: 16px 0;
+}
+
+.ts-footer-bottom-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.ts-footer-brand{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.ts-footer-brand-text strong{
+  display: block;
+  color: #fff;
+}
+
+.ts-footer-brand-text span{
+  display: block;
+  color: #cbd5e1;
+  font-size: 13px;
+}
+
+.ts-footer-copy{
+  color: #cbd5e1;
+  font-size: 14px;
+}
+
+@media (max-width: 768px){
+  .shortcut-grid{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .shortcut-item{
+    padding: 14px 8px;
+    font-size: 14px;
+    gap: 8px;
+  }
+
+  .shortcut-item .icon{
+    font-size: 18px;
+  }
+
+  .shortcut-item .label{
+    white-space: normal;
+    text-align: center;
+  }
+
+  .ts-footer-main-inner{
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .ts-footer-col .phone{
+    font-size: 42px;
+  }
+
+  .ts-footer-bottom-inner{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
