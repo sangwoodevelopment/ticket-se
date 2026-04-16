@@ -4273,3 +4273,11 @@ body{
     align-items: flex-start;
   }
 }
+
+.company-detail-title,
+.company-detail-section-title,
+.company-name-korean,
+.ts-company-name{
+  font-family: "HCR Batang", "HCR Batang LVT", "함초롱바탕", serif !important;
+  letter-spacing: -0.02em;
+}
