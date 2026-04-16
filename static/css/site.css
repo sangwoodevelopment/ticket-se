@@ -529,12 +529,6 @@ html {
   margin-bottom:22px;
 }
 
-.detail-info-grid{
-  display:grid;
-  grid-template-columns: 1fr;
-  gap:14px;
-}
-
 .detail-info-row{
   display:grid;
   grid-template-columns: 140px 1fr;
