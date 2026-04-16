@@ -261,3 +261,11 @@ class RecentView(models.Model):
 
     def __str__(self):
         return f"{self.user} - {self.company}"
+
+class Favorite(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    shopping = models.ForeignKey("MainBannerCard", on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ("user", "shopping")

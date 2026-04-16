@@ -4008,3 +4008,23 @@ body{
     grid-template-columns:1fr;
   }
 }
+
+.company-detail-title,
+.shopping-detail-title,
+.company-detail-section-title,
+.shopping-detail-section-title,
+.company-info-title,
+.premium-info-table,
+.company-name-korean,
+.shopping-name-korean {
+  font-family: "HCR Batang", "함초롱바탕", "Malgun Gothic", serif !important;
+  letter-spacing: -0.02em;
+}
+
+.ts-company-name,
+.ts-premium-name,
+.company-card-name,
+.shopping-card-name {
+  font-family: "HCR Batang", "함초롱바탕", "Malgun Gothic", serif !important;
+  letter-spacing: -0.02em;
+}
