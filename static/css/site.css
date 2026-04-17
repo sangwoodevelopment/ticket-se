@@ -5965,3 +5965,127 @@ body{
     height: 40px;
   }
 }
+
+/* 메인 히어로 문구 가운데 정렬 */
+.hero-section,
+.main-hero,
+.visual-section {
+  position: relative;
+}
+
+.hero-content,
+.main-hero-content,
+.visual-content {
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content .hero-sub,
+.main-hero-content .hero-sub,
+.visual-content .hero-sub {
+  text-align: center;
+}
+
+.hero-content h1,
+.main-hero-content h1,
+.visual-content h1 {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-content p,
+.main-hero-content p,
+.visual-content p {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 프리미엄 카드 정렬 고정 */
+.ts-premium-grid{
+  display:grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap:16px;
+}
+
+.ts-premium-card{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+
+.ts-premium-card-body{
+  display:flex;
+  flex-direction:column;
+  flex:1;
+  padding:12px;
+}
+
+.ts-premium-desc{
+  min-height:48px;
+  line-height:1.45;
+  margin-bottom:12px;
+  overflow:hidden;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  word-break:keep-all;
+}
+
+.ts-premium-actions{
+  margin-top:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+}
+
+.ts-premium-btn{
+  width:100%;
+  height:40px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:14px;
+  font-weight:700;
+  padding:0 8px;
+  white-space:nowrap;
+}
+
+@media (max-width: 768px){
+  .ts-premium-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap:14px;
+  }
+
+  .ts-premium-desc{
+    min-height:38px;
+    -webkit-line-clamp:2;
+    font-size:13px;
+  }
+
+  .ts-premium-btn{
+    height:38px;
+    font-size:13px;
+  }
+}
+
+.ts-premium-actions a{
+  text-decoration:none !important;
+}
+
+.ts-premium-btn.line{
+  border:1px solid #ef4444;
+  color:#ef4444;
+  background:#fff;
+}
+
+.ts-premium-btn.fill{
+  border:1px solid #ef4444;
+  color:#fff;
+  background:#ef4444;
+}
