@@ -6268,3 +6268,49 @@ body{
   color: #fff;
   background: #ef4444;
 }
+
+/* 하단 3등분 정렬 */
+.ts-footer-main-inner{
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* 각 영역 균형 */
+.ts-footer-col{
+  width: 100%;
+}
+
+/* 고객센터 (왼쪽) */
+.ts-footer-col.customer{
+  text-align: left;
+}
+
+/* 회사정보 (가운데) */
+.ts-footer-col.company{
+  text-align: left;
+  max-width: 520px;
+}
+
+/* 안내사항 (오른쪽) */
+.ts-footer-col.notice{
+  text-align: left;
+}
+
+/* 전체 가운데 정렬 유지 */
+.ts-footer-main .container{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px){
+  .ts-footer-main-inner{
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .ts-footer-col{
+    text-align: left;
+  }
+}
