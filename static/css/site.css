@@ -5486,3 +5486,44 @@ body{
     margin-top: 2px;
   }
 }
+
+.price-box-title-row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  min-height: 44px;   /* 높이 강제 */
+}
+
+.price-title-left{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.price-title-bar{
+  width: 4px;
+  height: 18px;
+  background: #ef4444;
+}
+
+.price-box-title{
+  margin: 0;
+  line-height: 1;
+  font-weight: 600;
+}
+
+@media (max-width: 768px){
+  .price-box-title-row{
+    padding: 10px 10px;
+    min-height: 40px;
+  }
+
+  .price-title-bar{
+    height: 16px;
+  }
+
+  .price-box-title{
+    font-size: 14px;
+  }
+}
