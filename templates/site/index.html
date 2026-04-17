@@ -298,30 +298,52 @@
   </div>
 </section>
 
-    <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      function bindCarouselPage(carouselId, currentId) {
-        const carouselEl = document.querySelector(carouselId);
-        const currentEl = document.querySelector(currentId);
-        if (!carouselEl || !currentEl) return;
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  function bindCarouselPage(carouselId, currentId) {
+    const carouselEl = document.querySelector(carouselId);
+    const currentEl = document.querySelector(currentId);
+    if (!carouselEl) return;
 
-        function updatePage() {
-          const items = carouselEl.querySelectorAll(".carousel-item");
-          let currentIndex = 0;
-          items.forEach((item, idx) => {
-            if (item.classList.contains("active")) currentIndex = idx + 1;
-          });
-          currentEl.textContent = currentIndex;
+    const dots = document.querySelectorAll(`.price-dots button[data-bs-target="${carouselId}"]`);
+
+    function updatePageAndDots() {
+      const items = carouselEl.querySelectorAll(".carousel-item");
+      let currentIndex = 0;
+
+      items.forEach((item, idx) => {
+        if (item.classList.contains("active")) currentIndex = idx;
+      });
+
+      if (currentEl) currentEl.textContent = currentIndex + 1;
+
+      dots.forEach((dot, idx) => {
+        if (idx === currentIndex) {
+          dot.classList.add("active");
+          dot.setAttribute("aria-current", "true");
+        } else {
+          dot.classList.remove("active");
+          dot.removeAttribute("aria-current");
         }
+      });
+    }
 
-        carouselEl.addEventListener("slid.bs.carousel", updatePage);
-        updatePage();
-      }
-
-      bindCarouselPage("#paperPriceCarousel", "#paperCurrentPage");
-      bindCarouselPage("#mobilePriceCarousel", "#mobileCurrentPage");
+    dots.forEach((dot, idx) => {
+      dot.addEventListener("click", function () {
+        dots.forEach(d => d.classList.remove("active"));
+        this.classList.add("active");
+        if (currentEl) currentEl.textContent = idx + 1;
+      });
     });
-    </script>
+
+    carouselEl.addEventListener("slid.bs.carousel", updatePageAndDots);
+    updatePageAndDots();
+  }
+
+  bindCarouselPage("#paperPriceCarousel", "#paperCurrentPage");
+  bindCarouselPage("#mobilePriceCarousel", "#mobileCurrentPage");
+});
+</script>
 
 <!-- 거래소 등록 업체 -->
 <section class="home-section">
