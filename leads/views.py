@@ -41,7 +41,7 @@ from django.shortcuts import redirect
 # Site
 # =========================
 def site_index(request):
-    banners = MainBannerCard.objects.filter(is_active=True).order_by("sort")[:8]
+    banners = MainBannerCard.objects.filter(is_active=True).order_by("sort")[:10]
 
     paper_prices = GiftcardPrice.objects.filter(
         is_active=True,
