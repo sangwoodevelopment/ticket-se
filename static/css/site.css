@@ -5439,3 +5439,50 @@ body{
     line-height: 1;
   }
 }
+
+/* 가로 스크롤 제거 */
+.price-table-scroll{
+  overflow-x: hidden;
+}
+
+/* 테이블을 화면에 강제로 맞춤 */
+.live-price-table{
+  width: 100%;
+  min-width: 0 !important;
+  table-layout: fixed;
+}
+
+/* 모바일 최적화 */
+@media (max-width: 768px){
+
+  .live-price-table th,
+  .live-price-table td{
+    font-size: 11px;
+    padding: 8px 4px;
+    white-space: normal;
+  }
+
+  /* 컬럼 비율 */
+  .live-price-table th:nth-child(1),
+  .live-price-table td:nth-child(1){
+    width: 34%;
+    text-align: left;
+  }
+
+  .live-price-table th:nth-child(2),
+  .live-price-table td:nth-child(2),
+  .live-price-table th:nth-child(3),
+  .live-price-table td:nth-child(3),
+  .live-price-table th:nth-child(4),
+  .live-price-table td:nth-child(4){
+    width: 22%;
+    text-align: center;
+  }
+
+  /* %를 아래로 내려서 공간 확보 */
+  .live-price-table .rate{
+    display: block;
+    font-size: 10px;
+    margin-top: 2px;
+  }
+}
