@@ -2470,6 +2470,11 @@ body{
   gap:48px;
 }
 
+.gm-ticket-hero__left{
+  color:#fff;
+  padding-top:4px;
+}
+
 .gm-ticket-hero__eyebrow{
   font-size:15px;
   font-weight:800;
@@ -6122,3 +6127,78 @@ body{
   margin-left: auto;
   margin-right: auto;
 }
+
+/* 메인 히어로 가운데 정렬 */
+.gm-ticket-hero{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 360px;
+}
+
+.gm-ticket-hero__center{
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.gm-ticket-hero__eyebrow{
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.gm-hero-title,
+.hero__title{
+  width: 100%;
+  max-width: none !important;
+  margin: 0 auto 18px;
+  text-align: center;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  word-break: keep-all;
+}
+
+.gm-hero-title span,
+.hero__title span{
+  color: #ff5a52;
+}
+
+.gm-ticket-hero__desc{
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* 혹시 기존에 왼쪽 정렬 강제한 게 있으면 덮어쓰기 */
+.gm-ticket-hero__left{
+  align-items: center !important;
+  text-align: center !important;
+}
+
+/* 모바일 */
+@media (max-width: 768px){
+  .gm-ticket-hero{
+    min-height: 300px;
+  }
+
+  .gm-ticket-hero__center{
+    max-width: 100%;
+    padding: 0 8px;
+  }
+
+  .gm-hero-title,
+  .hero__title{
+    font-size: 42px; /* 너무 크면 36px로 줄여도 됨 */
+    line-height: 1.18;
+  }
+
+  .gm-ticket-hero__desc{
+    font-size: 15px;
+    line-height: 1.5;
+  }
+}
+
