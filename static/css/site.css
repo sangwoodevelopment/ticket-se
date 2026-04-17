@@ -5538,3 +5538,136 @@ body{
 .detail-btn{
   margin: 0;
 }
+
+/* 모바일 햄버거 메뉴 */
+.mobile-menu-toggle{
+  display: none;
+}
+
+.mobile-menu-backdrop{
+  display: none;
+}
+
+@media (max-width: 768px){
+
+  .brand-header-inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .brand-top-links{
+    display: none !important;
+  }
+
+  .mobile-menu-toggle{
+    display: inline-flex;
+    width: 42px;
+    height: 42px;
+    border: none;
+    background: transparent;
+    padding: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    z-index: 1201;
+  }
+
+  .mobile-menu-toggle span{
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #fff;
+    border-radius: 999px;
+  }
+
+  .main-category-bar{
+    position: fixed;
+    top: 0;
+    right: -280px;
+    width: 260px;
+    height: 100vh;
+    background: #171d2f;
+    z-index: 1202;
+    transition: right 0.25s ease;
+    padding-top: 88px;
+    overflow-y: auto;
+    border-top: none !important;
+  }
+
+  .main-category-bar.is-open{
+    right: 0;
+  }
+
+  .main-category-bar .container{
+    padding: 0 16px;
+  }
+
+  .main-category-list{
+    display: flex !important;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .main-category-list li{
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin: 0 !important;
+  }
+
+  .main-category-list li.ms-auto{
+    margin-left: 0 !important;
+  }
+
+  .main-category-list a{
+    display: block;
+    width: 100%;
+    padding: 14px 4px;
+    color: #fff !important;
+    background: transparent !important;
+    border: none !important;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: left;
+  }
+
+  .main-category-item.has-submenu .main-submenu{
+    position: static;
+    display: block;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0 0 10px 12px;
+  }
+
+  .main-category-item.has-submenu .main-submenu a{
+    padding: 10px 4px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.85) !important;
+  }
+
+  .mobile-menu-backdrop{
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 1200;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s ease;
+  }
+
+  .mobile-menu-backdrop.is-open{
+    opacity: 1;
+    visibility: visible;
+  }
+
+  body.mobile-menu-open{
+    overflow: hidden;
+  }
+}
