@@ -6202,3 +6202,69 @@ body{
   }
 }
 
+/* 프리미엄 카드 고정 정렬 */
+.ts-premium-grid{
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.ts-premium-card{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.ts-premium-card-body{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 12px;
+}
+
+.ts-premium-desc{
+  min-height: 52px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: keep-all;
+}
+
+.ts-premium-actions{
+  margin-top: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.ts-premium-actions a{
+  text-decoration: none !important;
+}
+
+.ts-premium-btn{
+  width: 100%;
+  height: 40px;
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.ts-premium-btn.line{
+  border: 1px solid #ef4444;
+  color: #ef4444;
+  background: #fff;
+}
+
+.ts-premium-btn.fill{
+  border: 1px solid #ef4444;
+  color: #fff;
+  background: #ef4444;
+}
