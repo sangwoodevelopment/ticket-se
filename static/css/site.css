@@ -4954,3 +4954,210 @@ body{
     font-size:13px;
   }
 }
+
+/* ===== 실시간 티켓 금액 ===== */
+.price-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.price-box{
+  background:#fff;
+  border:1px solid #cfd8e3;
+  overflow:hidden;
+}
+
+.price-box-title-row{
+  background:#2f3b4f;
+  min-height:40px;
+  padding:0 12px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.price-title-left{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.price-title-bar{
+  width:4px;
+  height:20px;
+  background:#ef4444;
+  display:inline-block;
+}
+
+.price-box-title{
+  color:#fff;
+  font-size:15px;
+  font-weight:800;
+  line-height:1;
+}
+
+.price-sub-info{
+  padding:8px 12px 6px;
+  font-size:12px;
+  color:#7c8aa5;
+  background:#fff;
+}
+
+.price-dots{
+  position:static;
+  margin:0;
+  display:flex;
+  align-items:center;
+  gap:5px;
+}
+
+.price-dots button{
+  width:9px;
+  height:9px;
+  margin:0 !important;
+  border:none;
+  border-radius:999px;
+  background:#9aa4b5;
+  opacity:1;
+}
+
+.price-dots button.active{
+  width:24px;
+  background:#ef4444;
+}
+
+.live-price-table{
+  width:100%;
+  margin:0;
+  border-collapse:collapse;
+}
+
+.live-price-table thead th{
+  background:#eef2f6;
+  color:#5a6578;
+  font-size:13px;
+  font-weight:800;
+  padding:10px 8px;
+  border-top:1px solid #d8e0ea;
+  border-bottom:1px solid #d8e0ea;
+  text-align:center;
+}
+
+.live-price-table td{
+  padding:10px 8px;
+  border-bottom:1px solid #e3e8ef;
+  font-size:13px;
+  color:#394150;
+  text-align:center;
+}
+
+.live-price-table td:first-child,
+.live-price-table th:first-child{
+  text-align:left;
+}
+
+.live-price-table td:nth-child(3){
+  color:#ef4444;
+  font-weight:700;
+}
+
+.live-price-table td:nth-child(4){
+  color:#2b6cb0;
+  font-weight:700;
+}
+
+.live-price-table .rate{
+  font-size:11px;
+  font-weight:500;
+  color:#7b8798;
+}
+
+.empty-row{
+  padding:30px 0 !important;
+  text-align:center !important;
+  color:#7b8798 !important;
+}
+
+.price-bottom-nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:10px 12px;
+  background:#fff;
+}
+
+.price-page-btn{
+  min-width:72px;
+  height:28px;
+  padding:0 10px;
+  border:1px solid #d4dbe5;
+  background:#f8fafc;
+  color:#4d596d;
+  font-size:12px;
+  font-weight:700;
+  border-radius:3px;
+}
+
+.price-page-indicator{
+  font-size:13px;
+  color:#5f6b7c;
+  font-weight:700;
+}
+
+/* Bootstrap 기본 indicator 위치 꼬임 방지 */
+.carousel-indicators{
+  bottom:auto;
+}
+
+/* 모바일 */
+@media (max-width: 768px){
+  .price-grid{
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+
+  .price-box-title-row{
+    min-height:38px;
+    padding:0 10px;
+  }
+
+  .price-box-title{
+    font-size:14px;
+  }
+
+  .price-title-bar{
+    height:18px;
+  }
+
+  .price-sub-info{
+    font-size:11px;
+    padding:7px 10px 5px;
+  }
+
+  .price-dots button{
+    width:8px;
+    height:8px;
+  }
+
+  .price-dots button.active{
+    width:20px;
+  }
+
+  .live-price-table thead th,
+  .live-price-table td{
+    font-size:12px;
+    padding:9px 6px;
+    white-space:nowrap;
+  }
+
+  .price-page-btn{
+    min-width:66px;
+    height:28px;
+    font-size:12px;
+  }
+
+  .price-page-indicator{
+    font-size:12px;
+  }
+}

@@ -136,7 +136,6 @@
   </div>
 </section>
 
-<!-- 실시간 티켓 금액 -->
 <section class="home-section">
   <div class="container">
     <div class="section-head">
@@ -145,30 +144,53 @@
     </div>
 
     <div class="price-grid">
-<div class="price-box">
-  <div class="price-box-title">지류(종이) 상품권 시세</div>
 
-  <div id="paperPriceCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3500">
-    <div class="carousel-inner">
-      {% for chunk in paper_price_chunks %}
-      <div class="carousel-item {% if forloop.first %}active{% endif %}">
-        <table class="live-price-table">
-          <thead>
-            <tr>
-              <th>상품권</th>
-              <th>액면가</th>
-              <th>매입가</th>
-              <th>판매가</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for price in chunk %}
-            <tr>
-              <td>{{ price.name }}</td>
-              <td>{{ price.face_value|intcomma }}원</td>
-              <td>{{ price.buy_price|intcomma }}원 ({{ price.buy_rate }}%)</td>
-              <td>{{ price.sell_price|intcomma }}원 ({{ price.sell_rate }}%)</td>
-            </tr>
+      <!-- 지류(종이) 상품권 시세 -->
+      <div class="price-box">
+        <div class="price-box-title-row">
+          <div class="price-title-left">
+            <span class="price-title-bar"></span>
+            <div class="price-box-title">지류(종이) 상품권 시세</div>
+          </div>
+
+          {% if paper_price_chunks|length > 1 %}
+          <div class="price-dots carousel-indicators">
+            {% for chunk in paper_price_chunks %}
+            <button type="button"
+                    data-bs-target="#paperPriceCarousel"
+                    data-bs-slide-to="{{ forloop.counter0 }}"
+                    class="{% if forloop.first %}active{% endif %}"
+                    {% if forloop.first %}aria-current="true"{% endif %}
+                    aria-label="Slide {{ forloop.counter }}">
+            </button>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+
+        <div class="price-sub-info">※ 티켓세상 제공 자료 [{{ today|date:"y. m. d" }}]</div>
+
+        <div id="paperPriceCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3500">
+          <div class="carousel-inner">
+            {% for chunk in paper_price_chunks %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+              <table class="live-price-table">
+                <thead>
+                  <tr>
+                    <th>상품권</th>
+                    <th>액면가</th>
+                    <th>매입가</th>
+                    <th>판매가</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for price in chunk %}
+                  <tr>
+                    <td>{{ price.name }}</td>
+                    <td>{{ price.face_value|intcomma }}원</td>
+                    <td>{{ price.buy_price|intcomma }}원 <span class="rate">({{ price.buy_rate }}%)</span></td>
+                    <td>{{ price.sell_price|intcomma }}원 <span class="rate">({{ price.sell_rate }}%)</span></td>
+                  </tr>
                   {% endfor %}
                 </tbody>
               </table>
@@ -187,70 +209,119 @@
           </div>
 
           {% if paper_price_chunks|length > 1 %}
-          <button class="carousel-control-prev price-carousel-control" type="button" data-bs-target="#paperPriceCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-          </button>
-          <button class="carousel-control-next price-carousel-control" type="button" data-bs-target="#paperPriceCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-          </button>
+          <div class="price-bottom-nav">
+            <button class="price-page-btn" type="button" data-bs-target="#paperPriceCarousel" data-bs-slide="prev">◀️ 이전</button>
+            <div class="price-page-indicator">
+              <span id="paperCurrentPage">1</span> / {{ paper_price_chunks|length }}
+            </div>
+            <button class="price-page-btn" type="button" data-bs-target="#paperPriceCarousel" data-bs-slide="next">다음 ▶️</button>
+          </div>
           {% endif %}
         </div>
       </div>
 
+      <!-- 모바일 상품권 시세 -->
       <div class="price-box">
-  <div class="price-box-title">모바일 상품권 시세</div>
+        <div class="price-box-title-row">
+          <div class="price-title-left">
+            <span class="price-title-bar"></span>
+            <div class="price-box-title">모바일 상품권 시세</div>
+          </div>
+{% if mobile_price_chunks|length > 1 %}
+          <div class="price-dots carousel-indicators">
+            {% for chunk in mobile_price_chunks %}
+            <button type="button"
+                    data-bs-target="#mobilePriceCarousel"
+                    data-bs-slide-to="{{ forloop.counter0 }}"
+                    class="{% if forloop.first %}active{% endif %}"
+                    {% if forloop.first %}aria-current="true"{% endif %}
+                    aria-label="Slide {{ forloop.counter }}">
+            </button>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
 
-  <div id="mobilePriceCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3500">
-    <div class="carousel-inner">
-      {% for chunk in mobile_price_chunks %}
-      <div class="carousel-item {% if forloop.first %}active{% endif %}">
-        <table class="live-price-table">
-          <thead>
-            <tr>
-              <th>상품권</th>
-              <th>액면가</th>
-              <th>매입가</th>
-              <th>판매가</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for price in chunk %}
-            <tr>
-              <td>{{ price.name }}</td>
-              <td>{{ price.face_value|intcomma }}원</td>
-              <td>{{ price.buy_price|intcomma }}원 ({{ price.buy_rate }}%)</td>
-              <td>{{ price.sell_price|intcomma }}원 ({{ price.sell_rate }}%)</td>
-            </tr>
-              {% endfor %}
-            </tbody>
-          </table>
+        <div class="price-sub-info">※ 티켓세상 제공 자료 [{{ today|date:"y. m. d" }}]</div>
+
+        <div id="mobilePriceCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3500">
+          <div class="carousel-inner">
+            {% for chunk in mobile_price_chunks %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+              <table class="live-price-table">
+                <thead>
+                  <tr>
+                    <th>상품권</th>
+                    <th>액면가</th>
+                    <th>매입가</th>
+                    <th>판매가</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for price in chunk %}
+                  <tr>
+                    <td>{{ price.name }}</td>
+                    <td>{{ price.face_value|intcomma }}원</td>
+                    <td>{{ price.buy_price|intcomma }}원 <span class="rate">({{ price.buy_rate }}%)</span></td>
+                    <td>{{ price.sell_price|intcomma }}원 <span class="rate">({{ price.sell_rate }}%)</span></td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+            {% empty %}
+            <div class="carousel-item active">
+              <table class="live-price-table">
+                <tbody>
+                  <tr>
+                    <td colspan="4" class="empty-row">등록된 시세가 없습니다.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            {% endfor %}
+          </div>
+
+          {% if mobile_price_chunks|length > 1 %}
+          <div class="price-bottom-nav">
+            <button class="price-page-btn" type="button" data-bs-target="#mobilePriceCarousel" data-bs-slide="prev">◀️ 이전</button>
+            <div class="price-page-indicator">
+              <span id="mobileCurrentPage">1</span> / {{ mobile_price_chunks|length }}
+            </div>
+            <button class="price-page-btn" type="button" data-bs-target="#mobilePriceCarousel" data-bs-slide="next">다음 ▶️</button>
+          </div>
+          {% endif %}
         </div>
-        {% empty %}
-        <div class="carousel-item active">
-          <table class="live-price-table">
-            <tbody>
-              <tr>
-                <td colspan="4" class="empty-row">등록된 시세가 없습니다.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        {% endfor %}
       </div>
 
-      {% if mobile_price_chunks|length > 1 %}
-      <button class="carousel-control-prev price-carousel-control" type="button" data-bs-target="#mobilePriceCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-      </button>
-      <button class="carousel-control-next price-carousel-control" type="button" data-bs-target="#mobilePriceCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-      </button>
-      {% endif %}
-    </div>
-</div>
     </div>
   </div>
 </section>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      function bindCarouselPage(carouselId, currentId) {
+        const carouselEl = document.querySelector(carouselId);
+        const currentEl = document.querySelector(currentId);
+        if (!carouselEl || !currentEl) return;
+
+        function updatePage() {
+          const items = carouselEl.querySelectorAll(".carousel-item");
+          let currentIndex = 0;
+          items.forEach((item, idx) => {
+            if (item.classList.contains("active")) currentIndex = idx + 1;
+          });
+          currentEl.textContent = currentIndex;
+        }
+
+        carouselEl.addEventListener("slid.bs.carousel", updatePage);
+        updatePage();
+      }
+
+      bindCarouselPage("#paperPriceCarousel", "#paperCurrentPage");
+      bindCarouselPage("#mobilePriceCarousel", "#mobileCurrentPage");
+    });
+    </script>
 
 <!-- 거래소 등록 업체 -->
 <section class="home-section">
