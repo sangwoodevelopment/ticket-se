@@ -6089,3 +6089,41 @@ body{
   color:#fff;
   background:#ef4444;
 }
+
+/* 메인 히어로 중앙 정렬 */
+.hero-content,
+.main-hero-content,
+.visual-content,
+.hero-copy{
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-title{
+  margin: 0 auto 18px;
+  text-align: center;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  max-width: none !important;
+  width: 100%;
+}
+
+.hero-title .accent{
+  color: #ff5a52;
+}
+
+.hero-sub,
+.hero-content p,
+.main-hero-content p,
+.visual-content p{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
