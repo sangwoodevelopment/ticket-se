@@ -5917,3 +5917,51 @@ body{
     overflow: hidden;
   }
 }
+
+@media (max-width: 768px){
+  .brand-header-inner{
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-height: 96px;
+    padding-top: 14px;
+    padding-bottom: 12px;
+  }
+
+  .brand-logo-wrap{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .brand-logo-circle{
+    margin-left: 0;
+    flex: 0 0 auto;
+  }
+
+  .brand-logo-text{
+    text-align: left;
+  }
+
+  .brand-name{
+    margin: 0;
+    line-height: 1.1;
+  }
+
+  .brand-sub{
+    margin-top: 4px;
+    line-height: 1.2;
+  }
+
+  .mobile-menu-toggle{
+    position: absolute;
+    top: 18px;
+    right: 16px;
+    margin-left: 0;
+    width: 40px;
+    height: 40px;
+  }
+}
