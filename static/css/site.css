@@ -5161,3 +5161,51 @@ body{
     font-size:12px;
   }
 }
+
+.price-dots{
+  position: static;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  min-width: 120px;
+  flex-wrap: nowrap;
+}
+
+.price-dots button{
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  margin: 0 !important;
+  border: none;
+  border-radius: 999px;
+  background: #8f98a8;
+  opacity: 1;
+  flex: 0 0 auto;
+  box-shadow: none;
+}
+
+.price-dots button.active{
+  width: 22px;
+  height: 8px;
+  border-radius: 999px;
+  background: #ef4444;
+}
+
+@media (max-width: 768px){
+  .price-dots{
+    min-width: 92px;
+    gap: 5px;
+  }
+
+  .price-dots button{
+    width: 7px;
+    height: 7px;
+  }
+
+  .price-dots button.active{
+    width: 20px;
+    height: 7px;
+  }
+}
