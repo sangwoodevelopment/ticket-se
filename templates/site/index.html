@@ -64,7 +64,7 @@
             {% if b.phone %}
               <a href="tel:{{ b.phone }}" class="ts-premium-btn line">문의하기</a>
             {% else %}
-              <a href="{{ b.link_url }}" target="_blank" class="ts-premiun-btn line">문의하기</a>
+              <a href="{{ b.link_url }}" target="_blank" class="ts-premium-btn line">문의하기</a>
             {% endif %}
             <a href="{% url 'shopping_detail' b.id %}" class="ts-premium-btn fill">상세정보</a>
           </div>
