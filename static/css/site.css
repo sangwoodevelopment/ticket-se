@@ -6314,3 +6314,101 @@ body{
     text-align: left;
   }
 }
+
+/* ===== 프리미엄 업체 모바일 깨짐 수정 ===== */
+@media (max-width: 768px){
+
+  .ts-premium-grid{
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+  }
+
+  .ts-premium-card{
+    width: 100% !important;
+    min-width: 0 !important;
+    display: flex;
+    flex-direction: column;
+    height: auto !important;
+  }
+
+  .ts-premium-card-top{
+    min-height: 150px !important;
+    padding: 14px 10px !important;
+    position: relative;
+  }
+
+  .ts-premium-badge{
+    top: 10px !important;
+    right: 10px !important;
+    font-size: 11px !important;
+    padding: 4px 7px !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+  }
+
+  .ts-premium-name{
+    font-size: 17px !important;
+    line-height: 1.35 !important;
+    text-align: center !important;
+    word-break: keep-all !important;
+    white-space: normal !important;
+    margin-top: 18px !important;
+  }
+
+  .ts-premium-card-body{
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 12px 10px 14px !important;
+    flex: 1;
+  }
+
+  .ts-premium-desc{
+    min-height: 42px !important;
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+    margin-bottom: 12px !important;
+    overflow: hidden !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    word-break: keep-all !important;
+  }
+
+  .ts-premium-actions{
+    margin-top: auto !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+  }
+
+  .ts-premium-actions a{
+    text-decoration: none !important;
+  }
+
+  .ts-premium-btn{
+    width: 100% !important;
+    height: 38px !important;
+    padding: 0 6px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    box-sizing: border-box !important;
+  }
+
+  .ts-premium-btn.line{
+    border: 1px solid #ef4444 !important;
+    background: #fff !important;
+    color: #ef4444 !important;
+  }
+
+  .ts-premium-btn.fill{
+    border: 1px solid #ef4444 !important;
+    background: #ef4444 !important;
+    color: #fff !important;
+  }
+}
