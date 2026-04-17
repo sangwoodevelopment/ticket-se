@@ -5347,3 +5347,95 @@ body{
     height: 5px !important;
   }
 }
+
+/* 바로가기 제목 정렬 */
+.ts-shortcut-title{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ts-shortcut-title .bar{
+  width: 4px;
+  height: 28px;
+  background: #ef4444;
+  display: inline-block;
+  flex: 0 0 auto;
+}
+
+.ts-shortcut-title h3{
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* 모바일에서 bar랑 제목 한 줄 고정 */
+@media (max-width: 768px){
+  .ts-shortcut-title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .ts-shortcut-title .bar{
+    width: 4px;
+    height: 24px;
+    margin: 0;
+  }
+
+  .ts-shortcut-title h3{
+    margin: 0;
+    font-size: 16px;
+    line-height: 1;
+  }
+}
+
+.price-table-scroll{
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.live-price-table{
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+}
+
+@media (max-width: 768px){
+  .live-price-table{
+    min-width: 540px;
+  }
+
+  .live-price-table th,
+  .live-price-table td{
+    font-size: 12px;
+    padding: 8px 6px;
+    white-space: nowrap;
+  }
+
+  .ts-shortcut-title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .ts-shortcut-title .bar{
+    width: 4px;
+    height: 24px;
+    margin: 0;
+  }
+
+  .ts-shortcut-title h3{
+    margin: 0;
+    font-size: 16px;
+    line-height: 1;
+  }
+}

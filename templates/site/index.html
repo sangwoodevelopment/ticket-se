@@ -174,36 +174,40 @@
           <div class="carousel-inner">
             {% for chunk in paper_price_chunks %}
             <div class="carousel-item {% if forloop.first %}active{% endif %}">
-              <table class="live-price-table">
-                <thead>
-                  <tr>
-                    <th>상품권</th>
-                    <th>액면가</th>
-                    <th>매입가</th>
-                    <th>판매가</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {% for price in chunk %}
-                  <tr>
-                    <td>{{ price.name }}</td>
-                    <td>{{ price.face_value|intcomma }}원</td>
-                    <td>{{ price.buy_price|intcomma }}원 <span class="rate">({{ price.buy_rate }}%)</span></td>
-                    <td>{{ price.sell_price|intcomma }}원 <span class="rate">({{ price.sell_rate }}%)</span></td>
-                  </tr>
-                  {% endfor %}
-                </tbody>
-              </table>
+              <div class="price-table-scroll">
+                <table class="live-price-table">
+                  <thead>
+                    <tr>
+                      <th>상품권</th>
+                      <th>액면가</th>
+                      <th>매입가</th>
+                      <th>판매가</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for price in chunk %}
+                    <tr>
+                      <td>{{ price.name }}</td>
+                      <td>{{ price.face_value|intcomma }}원</td>
+                      <td>{{ price.buy_price|intcomma }}원 <span class="rate">({{ price.buy_rate }}%)</span></td>
+                      <td>{{ price.sell_price|intcomma }}원 <span class="rate">({{ price.sell_rate }}%)</span></td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
             </div>
             {% empty %}
             <div class="carousel-item active">
-              <table class="live-price-table">
-                <tbody>
-                  <tr>
-                    <td colspan="4" class="empty-row">등록된 시세가 없습니다.</td>
-                  </tr>
-                </tbody>
-              </table>
+              <div class="price-table-scroll">
+                <table class="live-price-table">
+                  <tbody>
+                    <tr>
+                      <td colspan="4" class="empty-row">등록된 시세가 없습니다.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
             {% endfor %}
           </div>
@@ -227,7 +231,7 @@
             <span class="price-title-bar"></span>
             <div class="price-box-title">모바일 상품권 시세</div>
           </div>
-{% if mobile_price_chunks|length > 1 %}
+          {% if mobile_price_chunks|length > 1 %}
           <div class="price-dots carousel-indicators">
             {% for chunk in mobile_price_chunks %}
             <button type="button"
@@ -248,36 +252,40 @@
           <div class="carousel-inner">
             {% for chunk in mobile_price_chunks %}
             <div class="carousel-item {% if forloop.first %}active{% endif %}">
-              <table class="live-price-table">
-                <thead>
-                  <tr>
-                    <th>상품권</th>
-                    <th>액면가</th>
-                    <th>매입가</th>
-                    <th>판매가</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {% for price in chunk %}
-                  <tr>
-                    <td>{{ price.name }}</td>
-                    <td>{{ price.face_value|intcomma }}원</td>
-                    <td>{{ price.buy_price|intcomma }}원 <span class="rate">({{ price.buy_rate }}%)</span></td>
-                    <td>{{ price.sell_price|intcomma }}원 <span class="rate">({{ price.sell_rate }}%)</span></td>
-                  </tr>
-                  {% endfor %}
-                </tbody>
-              </table>
+              <div class="price-table-scroll">
+                <table class="live-price-table">
+                  <thead>
+                    <tr>
+                      <th>상품권</th>
+                      <th>액면가</th>
+                      <th>매입가</th>
+                      <th>판매가</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for price in chunk %}
+                    <tr>
+                      <td>{{ price.name }}</td>
+                      <td>{{ price.face_value|intcomma }}원</td>
+                      <td>{{ price.buy_price|intcomma }}원 <span class="rate">({{ price.buy_rate }}%)</span></td>
+                      <td>{{ price.sell_price|intcomma }}원 <span class="rate">({{ price.sell_rate }}%)</span></td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
             </div>
             {% empty %}
             <div class="carousel-item active">
-              <table class="live-price-table">
-                <tbody>
-                  <tr>
-                    <td colspan="4" class="empty-row">등록된 시세가 없습니다.</td>
-                  </tr>
-                </tbody>
-              </table>
+              <div class="price-table-scroll">
+                <table class="live-price-table">
+                  <tbody>
+                    <tr>
+                      <td colspan="4" class="empty-row">등록된 시세가 없습니다.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
             {% endfor %}
           </div>
@@ -305,39 +313,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const currentEl = document.querySelector(currentId);
     if (!carouselEl) return;
 
-    const dots = document.querySelectorAll(`.price-dots button[data-bs-target="${carouselId}"]`);
-
-    function updatePageAndDots() {
+    function updatePage() {
       const items = carouselEl.querySelectorAll(".carousel-item");
       let currentIndex = 0;
-
       items.forEach((item, idx) => {
-        if (item.classList.contains("active")) currentIndex = idx;
+        if (item.classList.contains("active")) currentIndex = idx + 1;
       });
-
-      if (currentEl) currentEl.textContent = currentIndex + 1;
-
-      dots.forEach((dot, idx) => {
-        if (idx === currentIndex) {
-          dot.classList.add("active");
-          dot.setAttribute("aria-current", "true");
-        } else {
-          dot.classList.remove("active");
-          dot.removeAttribute("aria-current");
-        }
-      });
+      if (currentEl) currentEl.textContent = currentIndex;
     }
 
-    dots.forEach((dot, idx) => {
-      dot.addEventListener("click", function () {
-        dots.forEach(d => d.classList.remove("active"));
-        this.classList.add("active");
-        if (currentEl) currentEl.textContent = idx + 1;
-      });
-    });
-
-    carouselEl.addEventListener("slid.bs.carousel", updatePageAndDots);
-    updatePageAndDots();
+    carouselEl.addEventListener("slid.bs.carousel", updatePage);
+    updatePage();
   }
 
   bindCarouselPage("#paperPriceCarousel", "#paperCurrentPage");
