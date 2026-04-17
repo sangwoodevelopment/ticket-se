@@ -42,6 +42,7 @@ urlpatterns = [
     path("shopping/", views.shopping_page, name="shopping_page"),
     path("community/", views.community_page, name="community_page"),
     path("shopping/<int:shopping_id>/", views.shopping_detail, name="shopping_detail"),
+    path("shopping/<int:pk>/favorite/", views.toggle_banner_favorite, name="toggle_banner_favorite"),
 
     path("adm/banners/", views.adm_banner_list, name="adm_banner_list"),
     path("adm/banners/new/", views.adm_banner_create, name="adm_banner_create"),

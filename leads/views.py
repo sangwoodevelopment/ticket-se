@@ -23,6 +23,7 @@ from .forms import GiftcardPriceForm
 from .forms import RegisteredCompanyForm
 from .forms import BoardPostForm
 from .forms import BoardCommentForm
+from .models import FavoriteBanner
 from .models import RecentView
 from .models import Lead, LeadNote, Payment
 from .models import MainBannerCard, GiftcardPrice
@@ -1087,3 +1088,17 @@ def board_create(request, board_type):
         form = BoardPostForm()
 
     return render(request, "board_form.html", {"form": form})
+
+@login_required
+def toggle_banner_favorite(request, pk):
+    banner = get_object_or_404(MainBannerCard, pk=pk)
+
+    obj, created = FavoriteBanner.objects.get_or_create(
+        user = request.user,
+        banner = banner
+    )
+
+    if not created:
+        obj.delete()
+
+    return redirect("shopping_detail", pk=pk)

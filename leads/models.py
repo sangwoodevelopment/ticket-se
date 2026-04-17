@@ -276,3 +276,11 @@ class VisitorCount(models.Model):
 
     def __str__(self):
         return f"{self.date} - {self.count}"
+    
+class FavoriteBanner(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    banner = models.ForeignKey("MainBannerCard", on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ("user", "banner")
