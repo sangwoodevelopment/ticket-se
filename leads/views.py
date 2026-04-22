@@ -46,12 +46,12 @@ def site_index(request):
     paper_prices = GiftcardPrice.objects.filter(
         is_active=True,
         kind=GiftcardPrice.Kind.PAPER
-    ).order_by("sort", "name")[:10]
+    ).order_by("sort", "name")
 
     mobile_prices = GiftcardPrice.objects.filter(
         is_active=True,
         kind=GiftcardPrice.Kind.MOBILE
-    ).order_by("sort", "name")[:10]
+    ).order_by("sort", "name")
 
     paper_price_chunks = [paper_prices[i:i+5] for i in range(0, len(paper_prices), 5)]
     mobile_price_chunks = [mobile_prices[i:i+5] for i in range(0, len(mobile_prices), 5)]
