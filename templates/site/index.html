@@ -37,7 +37,7 @@
 </section>
 
 <!-- 히어로 아래 작은 배너 자동 슬라이드 -->
-<section class="home-section">
+<section class="home-section" id="premiun-section">
   <div class="container">
     <div class="ts-premium-head">
       <div class="ts-premium-title">
@@ -316,64 +316,6 @@ document.addEventListener("DOMContentLoaded", function () {
       {% empty %}
       <div class="empty-box">등록된 업체가 없습니다.</div>
       {% endfor %}
-    </div>
-  </div>
-</section>
-
-<!-- 커뮤니티 미리보기 -->
-<!-- 커뮤니티 미리보기 -->
-<section class="home-section">
-  <div class="container">
-    <div class="community-preview-grid">
-      <!-- 구매게시판 -->
-      <div class="community-board-card">
-        <div class="community-board-head">
-          <h3>상품권 구매게시판</h3>
-          <a href="{% url 'buy_board_page' %}">더보기</a>
-        </div>
-
-        <ul class="community-board-list">
-          {% for post in buy_posts %}
-          <li>
-            <a href="{% url 'board_detail' 'buy' post.id %}">
-              <div class="community-board-left">
-                <span class="community-badge">{{ post.get_category_display }}</span>
-                <span class="community-title">{{ post.title }}</span>
-              </div>
-              <span class="community-date">{{ post.created_at|date:"m.d" }}</span>
-            </a>
-          </li>
-          {% empty %}
-          <li class="community-empty">등록된 글이 없습니다.</li>
-          {% endfor %}
-        </ul>
-      </div>
-
-      <!-- 판매게시판 -->
-      <div class="community-board-card">
-        <div class="community-board-head">
-          <h3>상품권 판매게시판</h3>
-          <a href="{% url 'sell_board_page' %}">더보기</a>
-        </div>
-
-        <ul class="community-board-list">
-          {% for post in sell_posts %}
-          <li>
-            <a href="{% url 'board_detail' 'sell' post.id %}">
-              <div class="community-board-left">
-                {% if post.category %}
-                  <span class="community-badge">{{ post.get_category_display }}</span>
-                {% endif %}
-                <span class="community-title">{{ post.title }}</span>
-              </div>
-              <span class="community-date">{{ post.created_at|date:"m.d" }}</span>
-            </a>
-          </li>
-          {% empty %}
-          <li class="community-empty">등록된 글이 없습니다.</li>
-          {% endfor %}
-        </ul>
-      </div>
     </div>
   </div>
 </section>

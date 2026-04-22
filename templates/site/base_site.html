@@ -108,15 +108,6 @@
           거래소 등록업체
         </a>
       </li>
-      <li class="main-category-item has-submenu">
-        <a class="{% if active_nav == 'community' %}active{% endif %}" href="{% url 'community_page' %}">
-          상품권 커뮤니티
-        </a>
-        <div class="main-submenu">
-          <a href="{% url 'buy_board_page' %}">구매게시판</a>
-          <a href="{% url 'sell_board_page' %}">판매게시판</a>
-        </div>
-      </li>
 
       {% if request.user.is_authenticated and request.user.is_staff %}
       <li class="ms-auto">
@@ -204,13 +195,12 @@
         </div>
       </div>
 
-      <div class="shortcut-grid">
-        <a href="{% url 'buy_board_page' %}" class="shortcut-item">
+        <a href="{% url 'site_index' %}#premium-section" class="shortcut-item">
           <span class="icon">🛒</span>
           <span class="label">상품권 구매</span>
         </a>
 
-        <a href="{% url 'sell_board_page' %}" class="shortcut-item">
+        <a href="{% url 'site_index' %}#premium-section" class="shortcut-item">
           <span class="icon">💰</span>
           <span class="label">상품권 판매</span>
         </a>
