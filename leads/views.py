@@ -1,4 +1,5 @@
 from datetime import date
+import random
 
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
@@ -41,7 +42,17 @@ from django.shortcuts import redirect
 # Site
 # =========================
 def site_index(request):
-    banners = MainBannerCard.objects.filter(is_active=True).order_by("sort")[:10]
+    companies = list(
+        RegisteredCompany.objects.filter(is_active=True)
+    )
+    random.shuffle(companies)
+    companies = companies[:12]
+
+    banners = list(
+        MainBannerCard.objects.filter(is_active=True)
+    )
+    random.shuffle(banners)
+    banners = banners[:10]
 
     paper_prices = GiftcardPrice.objects.filter(
         is_active=True,
@@ -55,10 +66,6 @@ def site_index(request):
 
     paper_price_chunks = [paper_prices[i:i+5] for i in range(0, len(paper_prices), 5)]
     mobile_price_chunks = [mobile_prices[i:i+5] for i in range(0, len(mobile_prices), 5)]
-
-    companies = RegisteredCompany.objects.filter(
-        is_active=True
-    ).order_by("sort")[:12]
 
     buy_posts = BoardPost.objects.filter(
         board_type=BoardPost.BoardType.BUY,
