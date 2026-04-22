@@ -113,6 +113,10 @@
           거래소 등록업체
         </a>
       </li>
+        {% if request.user.is_authenticated and request.user.is_staff %}
+      <li class="ms-auto">
+        <a href="{% url 'adm_dashboard' %}">관리자</a>
+      </li>
       {% endif %}
     </ul>
   </div>
