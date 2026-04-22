@@ -94,6 +94,11 @@
 
     <ul class="main-category-list">
       <li>
+        <a class="{% if active_nav == 'home' %}active{% endif %}" href="{% url 'site_index' %}">
+          메인
+        </a>
+      </li>
+      <li>
         <a class="{% if active_nav == 'prices' %}active{% endif %}" href="{% url 'prices_page' %}">
           상품권 시세
         </a>
@@ -107,11 +112,6 @@
         <a class="{% if active_nav == 'companies' %}active{% endif %}" href="{% url 'companies_page' %}">
           거래소 등록업체
         </a>
-      </li>
-
-      {% if request.user.is_authenticated and request.user.is_staff %}
-      <li class="ms-auto">
-        <a href="{% url 'adm_dashboard' %}">관리자</a>
       </li>
       {% endif %}
     </ul>
